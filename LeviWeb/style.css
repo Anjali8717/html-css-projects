@@ -1,0 +1,297 @@
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #090d16;
+    color: #e2e8f0;
+    line-height: 1.6;
+}
+
+/* 1. Sticky Navbar */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10, 70, 37, 0.9);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #1e3b2f;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand {
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #38f878;
+    font-size: 0.95rem;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover {
+    color: #38f888;
+}
+
+/* 2. Hero Header */
+.hero-header {
+    text-align: center;
+    padding: 50px 20px 30px;
+}
+
+.badge {
+    background: rgba(207, 245, 229, 0.15);
+    color: #f838ef;
+    border: 1px dotted #8f02c7;
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.hero-header h1 {
+    font-size: 3.2rem;
+    color: #ffffff;
+    margin: 12px 0 5px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-shadow: 0 0 20px rgba(203, 56, 248, 0.4);
+}
+
+.japanese-text {
+    color: #94a3b8;
+    font-size: 1.1rem;
+}
+
+/* 3. Main Container */
+.main-card {
+    max-width: 920px;
+    margin: 0 auto 50px;
+    background-color: #2e2d13;
+    border-radius: 16px;
+    padding: 35px;
+    border: 1px solid #3b291e;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* Quick Facts Strip */
+.profile-strip {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    background: #1d200b;
+    padding: 18px;
+    border-radius: 12px;
+    border: 1px solid #1e293b;
+    margin-bottom: 35px;
+    text-align: center;
+}
+
+.fact-item span {
+    display: block;
+    font-size: 0.8rem;
+    color: #888b64;
+    text-transform: uppercase;
+}
+
+.fact-item strong {
+    color: #d238f8;
+    font-size: 1.05rem;
+}
+
+/* Section Headings */
+.section-block {
+    margin-bottom: 40px;
+    scroll-margin-top: 80px; /* Prevents navbar from covering headings on click */
+}
+
+.section-title {
+    color: #f838bf;
+    font-size: 1.25rem;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #3b1e35;
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+}
+
+.bio-text {
+    color: #cbd5e1;
+    margin-bottom: 25px;
+    text-align: justify;
+}
+
+/* Gallery */
+.gallery {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.img-wrapper {
+    overflow: hidden;
+    border-radius: 12px;
+    border: 2px solid #341e3b;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.img-wrapper img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.img-wrapper:hover {
+    transform: translateY(-5px);
+    border-color: #e838f8;
+}
+
+.img-wrapper:hover img {
+    transform: scale(1.05);
+}
+
+.main-img {
+    max-width: 480px;
+}
+
+/* 4. Combat Stats Progress Bars */
+.stats-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.stat-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.progress-bg {
+    width: 100%;
+    height: 10px;
+    background-color: #200b1e;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #35dc26, #71f89a);
+    border-radius: 6px;
+}
+
+.low-stat {
+    background: linear-gradient(90deg, #dc267b, #f87193);
+}
+
+/* 5. Quotes Grid */
+.quotes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.quote-card {
+    background: #0b1120;
+    padding: 20px;
+    border-left: 4px solid #f838d8;
+    border-radius: 8px;
+    font-style: italic;
+    color: #e2e8f0;
+}
+
+/* 6. Interactive Accordion (<details> tag) */
+.accordion-item {
+    background: #0b1120;
+    border: 1px solid #1e293b;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    padding: 15px 20px;
+    transition: border-color 0.2s;
+}
+
+.accordion-item:hover {
+    border-color: #dbf838;
+}
+
+.accordion-item summary {
+    font-weight: 600;
+    color: #f17dfc;
+    cursor: pointer;
+    list-style: none;
+}
+
+.accordion-item summary::before {
+    content: "+ ";
+    color: #d238f8;
+    font-weight: bold;
+}
+
+.accordion-item[open] summary::before {
+    content: "− ";
+}
+
+.accordion-item p {
+    margin-top: 12px;
+    color: #94a3b8;
+    font-size: 0.95rem;
+    border-top: 1px solid #1e293b;
+    padding-top: 10px;
+}
+
+/* Button & Footer */
+.action-bar {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.wiki-btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background-color: #02c744;
+    color: #ffffff;
+    text-decoration: aqua;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.wiki-btn:hover {
+    background-color: #0369a1;
+    transform: translateY(-2px);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #64748b;
+    font-size: 0.9rem;
+}
